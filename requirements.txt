@@ -1,0 +1,8 @@
+# Requerimientos del proyecto (solo paquetes externos necesarios)
+# Nota: os, random y time son parte de la librería estándar de Python y no van aquí.
+
+python>=3.10
+pygame>=2.1.0
+numpy>=1.25.0
+
+
