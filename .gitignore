@@ -1,0 +1,57 @@
+# Entornos Virtuales de Python
+venv/
+env/
+ENV/
+.venv/
+.env/
+virtualenv/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de sistemas operativos
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Cache
+.cache
+*.cache
+*.pyc
+
+# Datos temporales
+*.tmp
+*.log
