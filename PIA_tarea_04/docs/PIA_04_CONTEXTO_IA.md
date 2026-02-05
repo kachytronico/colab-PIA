@@ -1,30 +1,28 @@
-# CONTEXTO DEL PROYECTO: Tarea 4 - PIA (Programación de IA)
+# CONTEXTO DEL PROYECTO: Tarea 4 - PIA (Modo Examen)
 
 ## ROL
-Eres un experto en "Machine Learning Clásico" (Scikit-Learn) ayudando a un alumno del ciclo de especialización en IA. Tu objetivo es generar código pedagógico, limpio y alineado con los cuadernos de la Unidad 4 del curso.
+Eres un experto en "Machine Learning Clásico" (Scikit-Learn) ayudando a un alumno del ciclo de especialización en IA. Tu objetivo es generar código pedagógico, limpio y alineado con los cuadernos del repositorio clonado.
 
-## OBJETIVO DE LA TAREA
-Resolver dos problemas de negocio independientes en un único cuaderno de Google Colab:
-1. **Problema 1 (Supervisado):** "Sistema de arranque Tesla". Clasificación binaria (probabilidad de accidente).
-   - Dataset: `sistema_de_arranque.csv` (Cargar desde GitHub RAW).
-2. **Problema 2 (Semisupervisado):** "Fallos de producto". El target tiene muchos valores faltantes/no etiquetados.
-   - Dataset: `fallos_producto.csv` (Cargar desde GitHub RAW).
-   - Técnica clave: Usar `LabelPropagation` o `LabelSpreading` para etiquetar antes de clasificar.
+## ENTORNO DE TRABAJO
+- **Plataforma:** Google Colab.
+- **Estrategia:** "Modo Examen". No usamos URLs externas. Clonamos el repositorio del profesor al inicio y leemos todo desde local.
+- **Ruta Raíz del Repo:** `/content/colab-PIA` (ajustar si la carpeta se llama diferente al clonar).
 
-## FUENTES DE DATOS (URLs RAW OBLIGATORIAS)
-Usa SIEMPRE estas URLs para `pd.read_csv`:
-- P1: https://raw.githubusercontent.com/kachytronico/colab-PIA/refs/heads/main/PIA_UD04/sistema_de_arranque.csv
-- P2: https://raw.githubusercontent.com/kachytronico/colab-PIA/refs/heads/main/PIA_UD04/fallos_producto.csv
+## PROBLEMAS A RESOLVER
+1. **Problema 1 (Supervisado):** "Sistema de arranque Tesla". Clasificación binaria.
+   - **Ruta Datos:** `PIA_UD04/sistema_de_arranque.csv` (dentro del repo clonado).
+2. **Problema 2 (Semisupervisado):** "Fallos de producto". Target incompleto.
+   - **Ruta Datos:** `PIA_UD04/fallos_producto.csv` (dentro del repo clonado).
+   - **Técnica:** LabelPropagation/LabelSpreading.
 
-## RESTRICCIONES TÉCNICAS (MUY IMPORTANTE)
-1. **Librerías permitidas:** SOLO `pandas`, `numpy`, `matplotlib`, `seaborn` y `scikit-learn`.
-2. **Nivel del curso:** Unidad 4. NO USAR Deep Learning (TensorFlow, Keras, PyTorch). Mantenerse en algoritmos clásicos (KNN, Árboles, SVM, Ensembles).
-3. **Estilo de código:** Modular pero secuencial (Carga -> EDA -> Preprocesado -> Modelado).
-4. **Explicabilidad:** El código debe servir para repasar exámenes. Cada paso complejo debe llevar un comentario breve explicando el "por qué".
+## REFERENCIAS DE CÓDIGO (Cuadernos disponibles en local)
+Ten en cuenta que existen estos cuadernos de ejemplo en la carpeta `Cuadernos ejemplo` o `PIA_UD04` del repo clonado. Úsalos como "Gold Standard" de sintaxis:
+- **Preprocesado:** `201_Carga_de_datos`, `202_Columnas_inútiles...`, `401_División_en_conjuntos`.
+- **Modelos P1:** `402_KNN`, `403_Árboles_de_Decisión`, `404_Máquinas_de_vector_soporte`.
+- **Ensemble:** `406_Modelos_ensemble`.
+- **Semisupervisado (P2):** `407_Aprendizaje_semisupervisado`.
 
-## REFERENCIAS DE CÓDIGO (GitHub del Profesor)
-Basa tu sintaxis en estos cuadernos (simula su estilo):
-- Limpieza: `201_Carga...` y `202_Columnas...`.
-- Preprocesado: `401_División_en_conjuntos` (Split), `205_Columnas_categóricas` (Encoding), `206_La_maldición...` (PCA).
-- Modelos: `402_KNN`, `403_Árboles`, `404_SVM`.
-- Semisupervisado: `407_Aprendizaje_semisupervisado`.
+## REGLAS DE ORO
+1. **Verificación:** Antes de cargar nada, siempre verifica que el fichero existe con `os.path.exists()`.
+2. **Sin Alucinaciones:** Si falta una librería, no la inventes. Usa solo `scikit-learn`, `pandas`, `numpy`, `seaborn`, `matplotlib`.
+3. **Explicabilidad:** Cada celda compleja debe llevar comentarios explicando *qué* hace y *por qué* (útil para estudiar).

@@ -1,59 +1,165 @@
-# Resumen de cambios — PIA03 Problema 2
+# colab-PIA — Guía del repositorio (PIA IA&BD FPD La Rioja)
 
-Breve resumen para futura referencia y capturas.
-
-## Qué implementé
-
-### 1- **Optimización**: ajusta los hiperparámetros para entrenar el agente en el **menor número de episodios posible**.
-- Optimización de hiperparámetros para reducir episodios de entrenamiento:
-  - `learning_rate = 0.4` (actualización Q más agresiva).
-  - `discount_factor = 0.95` (valora recompensas futuras).
-  - `max_iterations = 150` (menos episodios objetivo para iterar rápido).
-#### Por qué tomé estas decisiones
-- Subir `learning_rate` acelera la convergencia de la Q-table, reduciendo episodios necesarios; es una estrategia agresiva pero útil para pruebas rápidas.
-- Mantener `discount_factor` alto permite que el agente prefiera soluciones con recompensa a medio plazo, adecuado para mapas con varios pasos.
-- Reducir `max_iterations` obliga a iterar hiperparámetros y centrarse en configuraciones que convergen más rápido.
-
-
-### 2- **8-vecindad**: el agente debe poder moverse en **todas las direcciones** (8 casillas adyacentes).
-- 8‑vecindad (movimiento diagonal):
-  - `q_table` pasa de `(grid_size*grid_size, 4)` a `(grid_size*grid_size, 8)`.
-  - Exploración: `for pos_action in range(4)` → `for pos_action in range(8)`.
-  - Selección aleatoria: `random.randint(0,3)` → `random.randint(0,7)`.
-  - Añadidas 4 acciones diagonales (NW, NE, SW, SE) en la lógica de movimiento en el Paso 2. Realizar la acción
-
-#### Por qué tomé estas decisiones
-- Añadir 8‑vecindad es un requisito de la rúbrica y cada acción necesita su propia columna en la Q-table.
-(Estos cambios se aplicaron en `ai_agent.py`.)
-
-
-## Cómo verificar / ejecutar
-1. Comprobar sintaxis sin abrir la ventana gráfica:
-
-```bash
-python -m py_compile ai_agent.py
-```
-
-2. Ejecutar el juego (abrirá ventana pygame):
-
-```bash
-python ai_agent.py
-```
-
-Observa los logs en la consola para ver inicio de episodios y resultados.
-
-## Capturas recomendadas para la entrega
-- Sección de hiperparámetros en `ai_agent.py` (muestra `learning_rate`, `discount_factor`, `max_iterations`).
-- Línea donde se declara `q_table` para evidenciar shape `(..., 8)`.
-- Bloque de exploración donde aparece `for pos_action in range(8)` y `random.randint(0,7)`.
-- Bloque de movimiento con las 4 acciones diagonales añadidas.
-- Ventana del juego mostrando movimiento diagonal en ejecución.
-- Logs/terminal con información de episodios, score y pasos (si los prints están activos).
-
-## Siguientes mejoras sugeridas (opcionales)
-- Inicialización optimista de la Q-table: `q_table = np.full((...,8), 0.5)` para forzar exploración temprana.
-- Reward shaping: añadir un pequeño bonus por acercarse a la salida para guiar el aprendizaje.
-- Barridos cortos de hiperparámetros (ej. ALPHA, EPS_DECAY) en ejecuciones de 10–30 episodios para elegir la mejor configuración.
+Este repositorio centraliza **tareas, cuadernos y documentación** del curso de **IA&BD (FPD La Rioja)** para **entender y completar las PIA**.  
+La idea es que tanto estudiantes como agentes puedan **localizar rápido** qué hay, para qué sirve y **cómo usarlo**.
 
 ---
-Archivo principal modificado: `ai_agent.py` (raíz del proyecto). Si quieres, añado un pequeño script para ejecutar barridos automáticos.
+
+## 🎯 Objetivo del repo
+- Reunir **todas las tareas PIA** (UD01–UD04).
+- Proveer **cuadernos de ejemplo** como referencia de sintaxis y flujo.
+- Mantener **documentación de apoyo** (rúbricas, checklist, guías).
+- Facilitar a agentes IA **instrucciones y contexto** para ayudar en las tareas.
+
+---
+
+## 🧭 Estructura general (resumen)
+
+Workspace
+Recopilando información del área de trabajo
+
+.
+├── .github/
+├── .vscode/
+├── Cuadernos ejemplo/
+├── Exámenes de años anteriores/
+├── Exámenes finales, el videojuego/
+├── img/
+├── PIA_Tarea_02/
+├── PIA_tarea_04/
+├── PIA_UD03/
+├── *.ipynb
+├── ai_agent.py
+├── human_agent.py
+├── requirements.txt
+└── README.md
+
+
+---
+
+## 📁 Carpetas principales
+
+### 1) [.github/](.github/)
+**Propósito:** instrucciones para agentes y reglas del repositorio.  
+Aquí se guardan documentos clave que **guían a Copilot** y describen **reglas de cada tarea**.
+
+- Reglas específicas UD04: [`PIA_instrucciones_tarea_04_copilot`](.github/instructions/PIA_instrucciones_tarea_04_copilot.instructions.md)
+
+---
+
+### 2) [.vscode/](.vscode/)
+**Propósito:** configuración del editor (VS Code).  
+No es contenido académico, solo preferencias locales.
+
+---
+
+### 3) [Cuadernos ejemplo/](Cuadernos%20ejemplo/)
+**Propósito:** cuadernos de referencia (“gold standard”) para sintaxis y flujo.  
+Útiles para replicar estructuras en tareas reales.
+
+Ejemplos relevantes:
+- `201_Carga_de_datos.ipynb`
+- `204_Análisis_de_variabilidad.ipynb`
+- `407_Aprendizaje_semisupervisado.ipynb`
+
+---
+
+### 4) [Exámenes de años anteriores/](Exámenes%20de%20años%20anteriores/)
+**Propósito:** material histórico de exámenes.  
+Sirve para practicar o entender formato de evaluación.
+
+---
+
+### 5) [Exámenes finales, el videojuego/](Exámenes%20finales,%20el%20videojuego/)
+**Propósito:** entrega final relacionada con el videojuego del curso.
+
+---
+
+### 6) [img/](img/)
+**Propósito:** recursos gráficos usados en proyectos (sprites, assets).
+
+---
+
+### 7) [PIA_Tarea_02/](PIA_Tarea_02/)
+**Propósito:** datos y recursos específicos de la tarea 02.
+
+---
+
+### 8) [PIA_tarea_04/](PIA_tarea_04/)
+**Propósito:** documentación y guías para la tarea 04 (modo examen).
+
+Documentos clave:
+- Guía de estilo: [PIA_tarea_04/docs/PIA_04_GUIA_ESTILO.md](PIA_tarea_04/docs/PIA_04_GUIA_ESTILO.md)
+- Plan de trabajo: [PIA_tarea_04/docs/PIA_04_PLAN_TRABAJO.md](PIA_tarea_04/docs/PIA_04_PLAN_TRABAJO.md)
+- Contexto IA: [PIA_tarea_04/docs/PIA_04_CONTEXTO_IA.md](PIA_tarea_04/docs/PIA_04_CONTEXTO_IA.md)
+
+---
+
+### 9) [PIA_UD03/](PIA_UD03/)
+**Propósito:** documentación completa para UD03 (Netflix + Q-learning).  
+
+Archivos clave:
+- Estructura de documentación: [PIA_UD03/ESTRUCTURA_DOCUMENTACION.md](PIA_UD03/ESTRUCTURA_DOCUMENTACION.md)
+- Revisión rápida: [PIA_UD03/REVISION_RAPIDA.md](PIA_UD03/REVISION_RAPIDA.md)
+- Rúbrica: [PIA_UD03/docs/problema1_enunciado_y_rubrica.md](PIA_UD03/docs/problema1_enunciado_y_rubrica.md)
+- Checklist: [PIA_UD03/docs/problema1_checklist_validacion.md](PIA_UD03/docs/problema1_checklist_validacion.md)
+- Prompts Copilot: [PIA_UD03/docs/problema1_prompts_copilot.md](PIA_UD03/docs/problema1_prompts_copilot.md)
+- Guía tutor: [PIA_UD03/docs/problema1_guia_tutor.md](PIA_UD03/docs/problema1_guia_tutor.md)
+- Resumen teórico: [PIA_UD03/docs/teoria_qlearning_resumen.md](PIA_UD03/docs/teoria_qlearning_resumen.md)
+
+---
+
+## 🧪 Cuadernos principales en la raíz
+
+### Tareas PIA
+- [PIA_01_Tarea.ipynb](PIA_01_Tarea.ipynb)
+- [PIA_01_Tarea_entregada.ipynb](PIA_01_Tarea_entregada.ipynb)
+- [PIA_02_Tarea_Procesamiento_de_la_informacion.ipynb](PIA_02_Tarea_Procesamiento_de_la_informacion.ipynb)
+- [PIA03_Tarea_Aprendizaje_NO_supervisado_y_por_refuerzo.ipynb](PIA03_Tarea_Aprendizaje_NO_supervisado_y_por_refuerzo.ipynb)
+- [PIA03_Tarea_Aprendizaje_NO_supervisado_y_por_refuerzo_cuidado.ipynb](PIA03_Tarea_Aprendizaje_NO_supervisado_y_por_refuerzo_cuidado.ipynb)
+
+### Materiales de clase
+- [Sesión_del_Tema_2.ipynb](Sesión_del_Tema_2.ipynb)
+- [Ejemplo tareas 01 PIA Sesión_2.ipynb](Ejemplo%20tareas%2001%20PIA%20Sesión_2.ipynb)
+
+---
+
+## 🤖 Agentes y scripts
+
+- `ai_agent.py`: agente Q-learning (videojuego).
+- `human_agent.py`: agente manual para jugar/pruebas.
+
+> Ambos usan assets de [img/](img/).
+
+---
+
+## 🧰 Dependencias
+- [requirements.txt](requirements.txt)
+
+---
+
+## ✅ Cómo usar este repositorio (flujo recomendado)
+
+1. **Identificar la tarea** (UD01, UD02, UD03, UD04).
+2. Ir al cuaderno correspondiente (ej: [PIA_02_Tarea_Procesamiento_de_la_informacion.ipynb](PIA_02_Tarea_Procesamiento_de_la_informacion.ipynb)).
+3. Si es UD03 o UD04, revisar documentación en [PIA_UD03/](PIA_UD03/) o [PIA_tarea_04/](PIA_tarea_04/).
+4. Consultar **Cuadernos ejemplo** para copiar sintaxis correcta.
+
+---
+
+## 🧭 Notas para agentes
+- Usar **documentos de instrucciones** en [.github/](.github/) para reglas exactas.
+- Preferir **cuadernos ejemplo** como referencia de estilo y flujo.
+- Mantener **rutas relativas** cuando se trabaje en Colab (ver [PIA_tarea_04/docs/PIA_04_GUIA_ESTILO.md](PIA_tarea_04/docs/PIA_04_GUIA_ESTILO.md)).
+
+---
+
+## 🔄 Mantenimiento
+Este README se **actualiza** cuando:
+- se añaden tareas nuevas,
+- se agregan documentos de apoyo,
+- cambia la estructura de carpetas.
+
+Si detectas nueva carpeta o archivo clave, se debe añadir aquí con **descripción clara**.
+
+---
