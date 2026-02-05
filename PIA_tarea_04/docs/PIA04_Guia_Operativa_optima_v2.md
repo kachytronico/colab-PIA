@@ -269,3 +269,8 @@ Criterios defendibles:
 - [ ] P1: ¿Ensembles con (a) fiabilidad >80% y (b) Regresión Lineal?
 - [ ] P2: ¿valid/test solo con etiquetas reales? ¿pseudo-etiquetado con umbral 0.90?
 - [ ] P2: ¿3 modelos supervisados + ensemble explicado?
+
+Nota (modo examen):
+Los datasets pueden proporcionarse en repositorios externos y/o comprimidos.
+Se asume que el notebook incluye una sección inicial de clonado,
+exploración del sistema de archivos y descompresión antes de la carga de datos.

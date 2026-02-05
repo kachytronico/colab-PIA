@@ -72,6 +72,41 @@ Ambos deben cumplir **todos los apartados y puntuaciones** del enunciado.
 - ✅ Usar **exclusivamente scikit-learn** y librerías estándar (numpy, pandas, matplotlib, seaborn).
 
 ---
+## BLOQUE OBLIGATORIO — CARGA DE DATOS (MODO EXAMEN)
+
+Antes de cualquier AED o modelado, el agente DEBE:
+
+1) Añadir al inicio de cada notebook una sección:
+   “Clonado de repositorio y carga de datos”.
+
+2) En esa sección, implementar el siguiente flujo (usando comandos de shell y Python):
+   - Clonar el repositorio:
+     https://github.com/kachytronico/PIA_04_datasets
+     SOLO si no existe en el entorno.
+   - Listar la estructura del repositorio (`ls`).
+   - Buscar archivos ZIP usando `find`.
+   - Descomprimir el archivo `datasets.zip` usando `unzip -o`
+     en la carpeta `PIA_04_datasets/unzip`.
+   - Listar los archivos CSV usando `find`.
+   - Cargar los CSV en pandas usando las rutas reales encontradas.
+
+3) Está PROHIBIDO:
+   - Hardcodear rutas que puedan cambiar.
+   - Suponer la ubicación exacta de los CSV.
+   - Usar rutas absolutas del sistema.
+
+4) El agente debe usar siempre `find` para descubrir rutas reales.
+
+### Estilo obligatorio de código (simplicidad tipo cuaderno)
+- Priorizar comandos de Colab con `!` (bash) para git/find/unzip.
+- Prohibido usar `subprocess`, `check_output`, `os.system` salvo causa justificada.
+- Cargar SOLO los 2 CSV necesarios en variables explícitas:
+  - df_tesla (sistema_de_arranque.csv)
+  - df_fallos (fallos_producto.csv)
+- Comentarios cortos en español y en primera persona.
+
+
+---
 
 ## 4) MODELOS OBLIGATORIOS (según enunciado)
 

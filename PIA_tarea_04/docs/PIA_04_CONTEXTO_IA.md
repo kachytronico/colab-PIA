@@ -16,11 +16,13 @@ Eres un experto en "Machine Learning Clásico" (Scikit-Learn) ayudando a un alum
    - **Técnica:** LabelPropagation/LabelSpreading.
 
 ## REFERENCIAS DE CÓDIGO (Cuadernos disponibles en local)
-Ten en cuenta que existen estos cuadernos de ejemplo en la carpeta `Cuadernos ejemplo` o `PIA_UD04` del repo clonado. Úsalos como "Gold Standard" de sintaxis:
+Ten en cuenta que existen estos cuadernos de ejemplo en la carpeta `Cuadernos ejemplo` o `PIA_tarea_04` del repo clonado. Úsalos como "Gold Standard" de sintaxis:
 - **Preprocesado:** `201_Carga_de_datos`, `202_Columnas_inútiles...`, `401_División_en_conjuntos`.
 - **Modelos P1:** `402_KNN`, `403_Árboles_de_Decisión`, `404_Máquinas_de_vector_soporte`.
 - **Ensemble:** `406_Modelos_ensemble`.
 - **Semisupervisado (P2):** `407_Aprendizaje_semisupervisado`.
+- Antes de escribir código de preprocesado/modelos/ensemble, abrir y seguir como plantilla los cuadernos ejemplo indicados en docs/PIA_04_CONTEXTO_IA.md (Gold Standard).
+- El código debe parecerse en estructura y estilo (mismo enfoque de sklearn, mismas etapas).
 
 ## REGLAS DE ORO
 1. **Verificación:** Antes de cargar nada, siempre verifica que el fichero existe con `os.path.exists()`.
