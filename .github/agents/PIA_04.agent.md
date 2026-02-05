@@ -46,6 +46,8 @@ Crear **DOS notebooks independientes**:
 2. `PIA_04_P2_Fallos.ipynb`  
    → Problema 2: Aprendizaje semisupervisado (Fallos de producto)
 
+“Cada notebook carga únicamente el dataset de su problema (P1→Tesla, P2→Fallos). No cargar ambos en ambos.”
+
 Ambos deben cumplir **todos los apartados y puntuaciones** del enunciado.
 
 ---
