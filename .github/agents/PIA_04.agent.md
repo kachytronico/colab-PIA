@@ -8,7 +8,7 @@ tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'pylance-
 # 🧠 PIA04 AGENT — Tarea 04 Programación de IA (UD4)
 
 Este agente es responsable de **crear y completar los dos notebooks (.ipynb)** de la Tarea 04,
-siguiendo **literalmente el enunciado oficial**, evitando errores conceptuales (data leakage),
+siguiendo **literalmente el enunciado oficial**, evitando errores conceptuales (data leakage)
 y aplicando las decisiones aclaradas en las tutorías.
 
 ---
@@ -18,21 +18,20 @@ y aplicando las decisiones aclaradas en las tutorías.
 Antes de escribir código o crear notebooks, el agente **DEBE leer y respetar**:
 
 ### 1.1 Fuentes de verdad (prioridad máxima)
-- `docs/PIA_04_tarea_enunciado.md`  ← **ENUNCIADO OFICIAL**
+- `docs/PIA_04_tarea_enunciado.md` ← **ENUNCIADO OFICIAL**
 - `docs/PIA04_Guia_Operativa_optima_v2.md`
 
-### 1.2 Fuentes de apoyo (consultar si existen)
+### 1.2 Fuentes de apoyo
 - `docs/PIA_04_GUIA_ESTILO.md`
 - `docs/PIA_04_PLAN_TRABAJO.md`
 - `docs/PIA_04_CONTEXTO_IA.md`
-- Cualquier informe de revisión de tutorías presente en `/docs`
+- Informes de revisión de tutorías presentes en `/docs`
 
 ### 1.3 Resolución de conflictos
-Si hay contradicciones entre documentos:
-1. Prevalece el **enunciado oficial**
-2. Después la **Guía Operativa**
-3. Después las **tutorías**
-4. Por último, criterios técnicos razonables
+1. Enunciado oficial  
+2. Guía Operativa  
+3. Tutorías  
+4. Criterio técnico razonable (sin salir del enunciado)
 
 ---
 
@@ -46,188 +45,183 @@ Crear **DOS notebooks independientes**:
 2. `PIA_04_P2_Fallos.ipynb`  
    → Problema 2: Aprendizaje semisupervisado (Fallos de producto)
 
-“Cada notebook carga únicamente el dataset de su problema (P1→Tesla, P2→Fallos). No cargar ambos en ambos.”
-
-Ambos deben cumplir **todos los apartados y puntuaciones** del enunciado.
+Regla estricta:
+- Cada notebook carga **únicamente** el dataset de su problema  
+  (P1 → Tesla, P2 → Fallos).
 
 ---
 
 ## 3) REGLAS NO NEGOCIABLES (LÍNEAS ROJAS)
 
-### 3.1 Data Leakage (prohibido)
-- ❌ Prohibido hacer `fit()` de:
-  - `SimpleImputer`
-  - `StandardScaler`
-  - `OneHotEncoder`
-  - `PCA`
-  - cualquier transformador
-  con el dataset completo.
-- ✅ Todos los `fit()` SOLO sobre `X_train`.
-- ✅ `transform()` sobre `X_train`, `X_valid`, `X_test`.
+### 3.1 Data Leakage
+- ❌ Prohibido ajustar (`fit`) transformadores con el dataset completo.
+- ✅ Todos los `fit` SOLO con `X_train`.
+- ✅ `transform` sobre `X_train`, `X_valid`, `X_test`.
+
+Afecta a:
+- Imputación
+- Escalado
+- Encoding
+- PCA
+- Cualquier transformación
 
 ### 3.2 Problema 2 (Semisupervisado)
 - ❌ Prohibido validar o testear con pseudo-etiquetas.
-- ✅ Validación y test deben provenir **solo de datos originalmente etiquetados**.
+- ✅ Validación y test SOLO con datos originalmente etiquetados.
 
 ### 3.3 Librerías
-- ❌ No usar TensorFlow, Keras, PyTorch u otro deep learning.
-- ✅ Usar **exclusivamente scikit-learn** y librerías estándar (numpy, pandas, matplotlib, seaborn).
+- ❌ TensorFlow, Keras, PyTorch, deep learning externo.
+- ✅ scikit-learn + numpy, pandas, matplotlib, seaborn.
 
 ---
-## BLOQUE OBLIGATORIO — CARGA DE DATOS (MODO EXAMEN)
+
+## 4) BLOQUE OBLIGATORIO — CARGA DE DATOS (MODO EXAMEN)
 
 Antes de cualquier AED o modelado, el agente DEBE:
 
 1) Añadir al inicio de cada notebook una sección:
-   “Clonado de repositorio y carga de datos”.
+   **“Clonado de repositorio y carga de datos”**
 
-2) En esa sección, implementar el siguiente flujo (usando comandos de shell y Python):
-   - Clonar el repositorio:
-     https://github.com/kachytronico/PIA_04_datasets
-     SOLO si no existe en el entorno.
-   - Listar la estructura del repositorio (`ls`).
-   - Buscar archivos ZIP usando `find`.
-   - Descomprimir el archivo `datasets.zip` usando `unzip -o`
-     en la carpeta `PIA_04_datasets/unzip`.
-   - Listar los archivos CSV usando `find`.
-   - Cargar los CSV en pandas usando las rutas reales encontradas.
+2) Implementar el flujo **modo examen**, usando:
+   - comandos de Colab con `!`
+   - Python mínimo
 
-3) Está PROHIBIDO:
-   - Hardcodear rutas que puedan cambiar.
-   - Suponer la ubicación exacta de los CSV.
-   - Usar rutas absolutas del sistema.
+Flujo obligatorio:
+- Clonar el repositorio solo si no existe:
+  https://github.com/kachytronico/PIA_04_datasets
+- Buscar `datasets.zip` con `find`.
+- Descomprimir con `unzip -o` en:
+  `PIA_04_datasets/unzip`
+- Listar CSV con `find`.
+- Cargar SOLO:
+  - `sistema_de_arranque.csv` → `df_tesla` (P1)
+  - `fallos_producto.csv` → `df_fallos` (P2)
 
-4) El agente debe usar siempre `find` para descubrir rutas reales.
-
-### Estilo obligatorio de código (simplicidad tipo cuaderno)
-- Priorizar comandos de Colab con `!` (bash) para git/find/unzip.
-- Prohibido usar `subprocess`, `check_output`, `os.system` salvo causa justificada.
-- Cargar SOLO los 2 CSV necesarios en variables explícitas:
-  - df_tesla (sistema_de_arranque.csv)
-  - df_fallos (fallos_producto.csv)
-- Comentarios cortos en español y en primera persona.
-
+Prohibido:
+- Hardcodear rutas.
+- Usar rutas absolutas.
+- Usar `subprocess`, `check_output`, bucles complejos.
 
 ---
 
-## 4) MODELOS OBLIGATORIOS (según enunciado)
+## 5) MODELOS OBLIGATORIOS (PROBLEMA 1)
 
-### Problema 1 — Supervisado (OBLIGATORIO)
-
-Entrenar y optimizar **exactamente estos 4 modelos**:
+Entrenar y optimizar **exactamente**:
 
 1. **KNN**
-   - Entrenar
-   - Optimizar con `GridSearchCV`
+   - GridSearchCV
 
-2. **DT (Decision Tree)**
-   - Entrenar
-   - Explicar el modelo (antes)
-   - Optimizar con `RandomizedSearchCV`
-   - Explicar el modelo (después)
+2. **Decision Tree**
+   - Explicación antes
+   - RandomizedSearchCV
+   - Explicación después
 
 3. **SVM**
-   - Entrenar
-   - Optimizar con `GridSearchCV`
-   - Usar `probability=True` si se necesitan probabilidades
+   - GridSearchCV
+   - `probability=True` si procede
 
-4. **NL (Neural Layer)**
-   - Implementar **EXCLUSIVAMENTE** con:
-     - `MLPClassifier` (`sklearn.neural_network`)
-     - Con función de activación (ej. `relu`)
-     - Con escalado previo obligatorio
-   - Optimizar con `RandomizedSearchCV`
+4. **NL**
+   - `MLPClassifier`
+   - Escalado obligatorio
+   - RandomizedSearchCV
 
 ---
 
-## 5) ENSEMBLES (Problema 1)
+## 6) ENSEMBLES (PROBLEMA 1)
 
-Crear **DOS modelos ensemble**, exactamente como indica el enunciado:
+Crear **DOS ensembles**:
 
-1. **Ensemble por fiabilidad**
-   - Usar los **tres mejores modelos**
-   - Incluir SOLO predicciones con fiabilidad > 80%
-   - Combinar mediante **media aritmética**
-   - Documentar el criterio y el fallback si ningún modelo supera el umbral
+1. **Por fiabilidad**
+   - Tres mejores modelos
+   - Solo predicciones con fiabilidad > 80%
+   - Media aritmética
+   - Fallback documentado
 
-2. **Ensemble por Regresión Lineal**
-   - Usar **TODOS los modelos**
+2. **Por regresión lineal**
+   - Todos los modelos
    - Meta-modelo: `LinearRegression`
-   - Features: probabilidades de los modelos base
-   - Justificar el umbral de decisión
+   - Entrada: probabilidades
 
 ---
 
-## 6) PROBLEMA 2 — SEMISUPERVISADO
+## 7) PROBLEMA 2 — SEMISUPERVISADO
 
-### 6.1 Etiquetado automático
-- Separar datos:
-  - `labeled` (etiqueta conocida)
-  - `unlabeled` (etiqueta NaN / -1)
-- Crear validación y test **solo con labeled**
-- Usar:
-  - `LabelPropagation` o `LabelSpreading`
-- Umbral recomendado para pseudo-etiquetas: **0.90**
-- Las pseudo-etiquetas SOLO pueden usarse para entrenamiento
+### 7.1 Etiquetado automático
+- Separar `labeled` / `unlabeled`
+- Valid/test solo con `labeled`
+- `LabelPropagation` o `LabelSpreading`
+- Umbral recomendado: 0.90
+- Pseudo-etiquetas solo para entrenamiento
 
-### 6.2 Supervisado final
-- Entrenar y optimizar **3 modelos supervisados distintos**
-- Compararlos
-- Crear **1 ensemble final**
-- Explicar claramente el criterio usado
+### 7.2 Supervisado final
+- 3 modelos supervisados distintos
+- Comparación
+- 1 ensemble final explicado
 
 ---
 
-## 7) ESTRUCTURA DE LOS NOTEBOOKS (OBLIGATORIA)
+## 8) ESTRUCTURA DE NOTEBOOKS (OBLIGATORIA)
 
-- Cada apartado del enunciado debe aparecer como:
-  - 1 celda **Markdown**
-  - Con el **título EXACTO y literal** del enunciado
-- Bajo cada título:
-  - Celdas de código mínimas
-  - Evidencia clara (gráficas, métricas, tablas)
-
----
-
-## 8) ESTILO DE CÓDIGO Y DOCUMENTACIÓN
-
-- Comentarios:
-  - En español
-  - En primera persona
-  - Cortos y explicativos
-
-### Bloque obligatorio tras cada paso importante
-Después de cada apartado relevante, añadir un bloque Markdown titulado:
-
-**“Texto para la captura”**, que contenga:
-- 1 título corto
-- 2–3 frases en primera persona (qué hice y por qué)
-- 1 frase indicando cómo lo comprobé (logs, métricas, gráficas)
+- Cada apartado del enunciado:
+  - 1 celda Markdown
+  - Título **literal**
+- Código mínimo necesario
+- Evidencias claras (gráficas, métricas)
 
 ---
 
-## 9) PLAN DE TRABAJO DEL AGENTE
+## 9) ESTILO DE CÓDIGO Y DOCUMENTACIÓN
 
-El agente debe actuar en este orden:
+### 9.1 Estilo de código
+- Comentarios en español, primera persona.
+- Código sencillo y alineado con los cuadernos ejemplo
+  (`docs/PIA_04_CONTEXTO_IA.md`).
+- Evitar overengineering.
 
-1. **Leer todas las fuentes obligatorias**
-2. Crear ambos notebooks con:
-   - Solo estructura
-   - Títulos literales del enunciado
-   - Placeholders
-3. Esperar confirmación del usuario
-4. Rellenar código real usando datasets en `/data`
-5. Revisar cumplimiento con la rúbrica
-6. Añadir checklist final de entrega
+### 9.2 Documentación (rol del agente)
+
+El agente **NO puede basarse de forma fiable en la salida real del notebook**,
+por lo que su rol es preparar documentación previa y una guía de conclusiones.
+
+Para cada bloque importante (AED, preprocesado, modelos, ensembles, semisupervisado):
+
+1) **ANTES del código**
+   - Celda Markdown: **“Objetivo y plan”**
+   - 2–6 líneas:
+     - qué voy a hacer
+     - por qué es necesario
+     - qué espero observar o decidir
+
+2) **DESPUÉS del código**
+   - Celda Markdown: **“Conclusiones (a completar tras ejecutar)”**
+   - Borrador indicando qué evidencias deben analizarse:
+     - shapes, nulos, métricas, hiperparámetros, comparaciones, gráficos
+   - Prohibido inventar resultados.
+
+3) **Flujo recomendado**
+   - El usuario ejecuta el notebook.
+   - Completa o mejora conclusiones con resultados reales
+     (opcionalmente con Gemini en Colab).
 
 ---
 
-## 10) COMPORTAMIENTO ESPERADO
+## 10) PLAN DE TRABAJO DEL AGENTE
 
-- No improvisar modelos ni técnicas fuera del enunciado
-- No “simplificar” la tarea saltándose apartados
-- Priorizar claridad, trazabilidad y defensa ante corrección
-- Si falta información crítica, **preguntar antes de continuar**
+1. Leer todas las fuentes obligatorias.
+2. Crear ambos notebooks (estructura + títulos literales).
+3. Esperar confirmación.
+4. Rellenar código real usando el flujo modo examen.
+5. Verificar rúbrica.
+6. Añadir checklist final de entrega.
+
+---
+
+## 11) COMPORTAMIENTO ESPERADO
+
+- No improvisar modelos.
+- No saltarse apartados.
+- Priorizar claridad y defensa ante corrección.
+- Preguntar si falta información crítica.
 
 ---
 
