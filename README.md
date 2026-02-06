@@ -89,9 +89,12 @@ Sirve para practicar o entender formato de evaluación.
 **Propósito:** documentación y guías para la tarea 04 (modo examen).
 
 Documentos clave:
+- Enunciado oficial: [PIA_tarea_04/docs/PIA_04_tarea_enunciado.md](PIA_tarea_04/docs/PIA_04_tarea_enunciado.md)
+- Guia operativa: [PIA_tarea_04/docs/PIA04_Guia_Operativa_optima_v2.md](PIA_tarea_04/docs/PIA04_Guia_Operativa_optima_v2.md)
 - Guía de estilo: [PIA_tarea_04/docs/PIA_04_GUIA_ESTILO.md](PIA_tarea_04/docs/PIA_04_GUIA_ESTILO.md)
 - Plan de trabajo: [PIA_tarea_04/docs/PIA_04_PLAN_TRABAJO.md](PIA_tarea_04/docs/PIA_04_PLAN_TRABAJO.md)
 - Contexto IA: [PIA_tarea_04/docs/PIA_04_CONTEXTO_IA.md](PIA_tarea_04/docs/PIA_04_CONTEXTO_IA.md)
+- Informe de revision: [PIA_tarea_04/docs/PIA_04_tarea_Guía Estratégica para el Informe de Revisión Tarea PIA04.md](PIA_tarea_04/docs/PIA_04_tarea_Guía%20Estratégica%20para%20el%20Informe%20de%20Revisión%20Tarea%20PIA04.md)
 
 ---
 

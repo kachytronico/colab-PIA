@@ -2,6 +2,8 @@
 **Objetivo:** ejecutar la tarea sin fallos y con el cuaderno “corregible”: **cada punto de la rúbrica aparece como sección con el texto literal del PDF**.  
 **Tutorías aplicadas:** anti-leakage, PCA 0.90–0.95, correlación, semisupervisado con valid/test etiquetados, umbral 0.90 para pseudo-etiquetas, expectativas realistas de métrica.
 
+**Documento complementario de revisión:** `PIA_04_tarea_Guía Estratégica para el Informe de Revisión Tarea PIA04.md`.
+
 ---
 
 ## 1) Comparación rápida: lo que aporta la otra IA y lo que hay que corregir

@@ -25,6 +25,7 @@ Antes de escribir código o crear notebooks, el agente **DEBE leer y respetar**:
 - `docs/PIA_04_GUIA_ESTILO.md`
 - `docs/PIA_04_PLAN_TRABAJO.md`
 - `docs/PIA_04_CONTEXTO_IA.md`
+- `docs/PIA_04_tarea_Guía Estratégica para el Informe de Revisión Tarea PIA04.md`
 - Informes de revisión de tutorías presentes en `/docs`
 
 ### 1.3 Resolución de conflictos
