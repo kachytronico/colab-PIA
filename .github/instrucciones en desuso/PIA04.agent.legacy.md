@@ -3,8 +3,8 @@ tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'agent', 'pylance-
 ---
 ---
 name: PIA04 Agent
-description: Genera y completa los 2 notebooks (.ipynb) de PIA04 cumpliendo el PDF literal y las líneas rojas (anti-leakage).
-argument-hint: "Indica dónde están los CSV en /data. NL se implementa con MLPClassifier."
+description: Genera y completa los 2 notebooks (.ipynb) de PIA04 cumpliendo el PDF literal y las lineas rojas (anti-leakage).
+argument-hint: "Indica donde estan los CSV en /data. NL se implementa con MLPClassifier."
 
 ---
 
@@ -12,7 +12,7 @@ Eres un agente para completar la tarea PIA04.
 
 FUENTES DE CONOCIMIENTO OBLIGATORIAS
 
-Antes de escribir código o crear notebooks, el agente DEBE:
+Antes de escribir codigo o crear notebooks, el agente DEBE:
 1) Leer y priorizar como fuente de verdad principal:
    - docs/PIA04_Guia_Operativa_optima_v2.md
    - docs/PIA_04_tarea_enunciado.md
@@ -21,15 +21,15 @@ Antes de escribir código o crear notebooks, el agente DEBE:
    - docs/PIA_04_GUIA_ESTILO.md
    - docs/PIA_04_PLAN_TRABAJO.md
    - docs/PIA_04_CONTEXTO_IA.md
-   - Cualquier informe de revisión de tutorías presente en /docs
+   - Cualquier informe de revision de tutorias presente en /docs
 
 3) Si existe conflicto entre documentos:
    - Prevalece el enunciado oficial
-   - Después la Guía Operativa
-   - Después las tutorías
+   - Despues la Guia Operativa
+   - Despues las tutorias
 
 REGLAS:
-1) Antes de escribir código, lee:
+1) Antes de escribir codigo, lee:
 - docs/PIA04_Guia_Operativa_optima_v2.md
 - docs/PIA_04_tarea_enunciado.md
 
@@ -37,7 +37,7 @@ REGLAS:
 - PIA_04_P1_Tesla.ipynb
 - PIA_04_P2_Fallos.ipynb
 
-3) Cada sección/celda Markdown debe llevar el título literal del PDF.
+3) Cada seccion/celda Markdown debe llevar el titulo literal del PDF.
 4) Prohibido data leakage: fit solo en train.
 5) En P2 valid/test solo con etiquetas reales.
 6) En P1 incluye KNN(GridSearch), DT(RandomSearch + explicar 2 veces), SVM(GridSearch), y NL implementado con MLPClassifier(RandomSearch).
@@ -46,17 +46,17 @@ REGLAS:
 
 PLAN DE TRABAJO:
 - Paso A: construir el esqueleto exacto de secciones (solo Markdown).
-- Paso B: añadir celdas de código mínimas por sección (sin optimizaciones enormes).
-- Paso C: una vez estén los datos en /data, ejecutar y ajustar hiperparámetros con grids razonables.
+- Paso B: anadir celdas de codigo minimas por seccion (sin optimizaciones enormes).
+- Paso C: una vez esten los datos en /data, ejecutar y ajustar hiperparametros con grids razonables.
 
-ESTILO DE CÓDIGO Y DOCUMENTACIÓN
+ESTILO DE CODIGO Y DOCUMENTACION
 
-- Comentarios cortos, en español y en primera persona.
+- Comentarios cortos, en espanol y en primera persona.
 - Tras cada bloque relevante, incluir un bloque Markdown titulado:
-  “Texto para la captura”
+  "Texto para la captura"
   con:
-  - 1 título corto
-  - 2–3 frases en primera persona (qué hice y por qué)
-  - 1 frase explicando cómo lo comprobé
-- Seguir las reglas de código y estilo indicadas en docs/PIA_04_GUIA_ESTILO.md
+  - 1 titulo corto
+  - 2-3 frases en primera persona (que hice y por que)
+  - 1 frase explicando como lo comprobe
+- Seguir las reglas de codigo y estilo indicadas en docs/PIA_04_GUIA_ESTILO.md
 - Si hay dudas de sintaxis, consultar los cuadernos de ejemplo en el repo clonado (201, 202, 401, 402, 403, 404, 406, 407).
