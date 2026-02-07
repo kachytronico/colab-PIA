@@ -8,9 +8,6 @@ Los problemas son generalistas a propósito (tienen muchas formas de ser resuelt
 
 Elon Musk se ha puesto en contacto con nuestra empresa para crear un sistema experto que determine, antes de arrancar el coche, la probabilidad de tener un accidente. Para ello, nos han otorgado acceso a un conjunto de datos pequeño, de 600 mediciones, en las que hubo (o no) accidentes. 
 
-&nbsp;
-
-
 
 1\.   Realiza un AED sobre el conjunto de datos.
 
@@ -21,7 +18,6 @@ Elon Musk se ha puesto en contacto con nuestra empresa para crear un sistema exp
 \*   Distribuciones de las variables numéricas del conjunto de datos. 0.3 puntos
 
 \*   Matriz de correlación. 0.5 puntos 
-
 
 
 2\. Realiza el preprocesamiento de datos de tu problema. 
@@ -44,7 +40,6 @@ Elon Musk se ha puesto en contacto con nuestra empresa para crear un sistema exp
 
 3\.  Entrena y optimiza un modelo de KNN. 
 
-&nbsp;
 
 \*   Entrenar un KNN. 0.4 puntos 
 
@@ -90,24 +85,26 @@ Elon Musk se ha puesto en contacto con nuestra empresa para crear un sistema exp
 
 
 
-## Problema 2: Fallos de producto 
+## Problema 2: Fallos de producto
 Ayuda a una empresa a mejorar su producto prediciendo cuándo fallará. El problema principal es que detectar, notificar y registrar los fallos es un proceso muy costoso, por lo que no se dispone de todas las etiquetas finales que permitirían entrenar perfectamente al modelo.
-Realiza un AED sobre el conjunto de datos. 
-Estadísticos iniciales. 0.2 puntos 
-Distribuciones de las variables numéricas del conjunto de datos. 0.3 puntos 
-Matriz de correlación. 0.5 puntos 
-Realiza el preprocesamiento de datos de tu problema. 
-Reserva un conjunto de datos para validación y otro para testeo. 0.5 puntos 
-Columnas inútiles, valores sin sentido y atípicos. 1 puntos 
-Tratamiento de valores nulos. 0.5 puntos 
-Análisis de variabilidad. 0.5 puntos 
-Columnas categóricas. 0.5 punto 
-Reducción de la dimensionalidad. 1 punto 
-Realiza un etiquetado automático. 1 punto 
-Entrena y optimiza distintos modelos supervisados. 
-Modelo 1. 1 punto 
-Modelo 2. 1 punto 
-Modelo 3. 1 punto 
-Crea un modelo ensemble y explica el criterio que utilizas. 1 punto 
+
+1. Realiza un AED sobre el conjunto de datos.
+*  Estadísticos iniciales. 0.2 puntos
+*  Distribuciones de las variables numéricas del conjunto de datos. 0.3 puntos
+*  Matriz de correlación. 0.5 puntos
+2. Realiza el preprocesamiento de datos de tu problema.
+*  Reserva un conjunto de datos para validación y otro para testeo. 0.5 puntos
+*  Columnas inútiles, valores sin sentido y atípicos. 1 puntos
+*  Tratamiento de valores nulos. 0.5 puntos
+*  Análisis de variabilidad. 0.5 puntos
+*  Columnas categóricas. 0.5 punto
+*  Reducción de la dimensionalidad. 1 punto
+3. Realiza un etiquetado automático. 1 punto
+4. Entrena y optimiza distintos modelos supervisados.
+*  Modelo 1. 1 punto
+*  Modelo 2. 1 punto
+*  Modelo 3. 1 punto
+5.  Crea un modelo ensemble y explica el criterio que utilizas. 1 punto
+
 # Entrega 
 Realiza tu tarea en dos documentos ipynb (en Jupyther o en Google Colab). Una vez finalizada, entrégala mediante el Aula Virtual en formato zip en la tarea reservada para ello.
