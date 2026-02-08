@@ -132,52 +132,55 @@ Por cada ítem del PDF:
 
 # 3) Notebook 1 — Problema 1: Sistema de arranque Tesla (supervisado)
 
+> **Nota importante:** no mezclar procedimientos ni datos entre P1 y P2. Cada problema se resuelve de forma independiente siguiendo su propio enunciado.
+
 > Nota: aquí la guía operativa es “a prueba de rúbrica”: 4 modelos (KNN, DT, SVM, NL) + ensembles.
 
+
 ## A) AED (PDF literal)
-### Celda A1 — Markdown
+### Titulo literal del enunciado
 `Realiza un AED sobre el conjunto de datos.`  
 - qué mirar: nulos, distribución target, outliers, correlación.
 
-### Celda A2 — Markdown
+### Titulo literal del enunciado
 `Estadísticos iniciales.`  
 - `df.describe(include='all')` + 3 hallazgos.
 
-### Celda A3 — Markdown
+### Titulo literal del enunciado
 `Distribuciones de las variables numéricas del conjunto de datos.`  
 - histogramas / boxplots.
 
-### Celda A4 — Markdown
+### Titulo literal del enunciado
 `Matriz de correlación.`  
 - heatmap.
 
 ## B) Preprocesamiento (PDF literal)
-### Celda B1 — Markdown
+### Titulo literal del enunciado
 `Realiza el preprocesamiento de datos de tu problema.`  
 - enumerar: split + nulos + encoding + escalado + (PCA si aplica).
 
-### Celda B2 — Markdown
+### Titulo literal del enunciado
 `Reserva un conjunto de datos para validación y otro para testeo.`  
 - recomendado: 70/15/15 estratificado.
 
-### Celda B3 — Markdown
+### Titulo literal del enunciado
 `Columnas inútiles, valores sin sentido y atípicos.`  
 - IDs/constantes/duplicadas → fuera.  
 - valores imposibles → regla en train.
 
-### Celda B4 — Markdown
+### Titulo literal del enunciado
 `Tratamiento de valores nulos.`  
 - imputación fit solo en train.
 
-### Celda B5 — Markdown
+### Titulo literal del enunciado
 `Análisis de variabilidad.`  
 - eliminar varianza 0/casi 0 con umbral.
 
-### Celda B6 — Markdown
+### Titulo literal del enunciado
 `Columnas categóricas.`  
 - OneHotEncoder.
 
-### Celda B7 — Markdown
+### Titulo literal del enunciado
 `Reducción de la dimensionalidad.`  
 - PCA 0.90–0.95 si hay muchas columnas y no rompe interpretabilidad.
 
@@ -225,6 +228,8 @@ Recomendación: implementar NL como `MLPClassifier` (activación obligatoria), c
 
 # 4) Notebook 2 — Problema 2: Fallos de producto (semisupervisado)
 
+> **Nota importante:** no mezclar procedimientos ni datos entre P1 y P2. Cada problema se resuelve de forma independiente siguiendo su propio enunciado.
+
 ## A) AED (PDF literal)
 - `Realiza un AED sobre el conjunto de datos.`
 - `Estadísticos iniciales.`
@@ -242,7 +247,7 @@ Recomendación: implementar NL como `MLPClassifier` (activación obligatoria), c
 - `Reducción de la dimensionalidad.`
 
 ## C) Semisupervisado (PDF literal)
-### Celda C1 — Markdown
+### Titulo literal del enunciado
 `Realiza un etiquetado automático.`
 
 Flujo recomendado (compatible con tutorías):
@@ -430,27 +435,27 @@ Para aprobar sin complicaciones, divide la tarea en dos cuadernos claros. En el 
 
 # NOTEBOOK 1 — `Problema 1: Sistema de arranque Tesla`
 
-## (Opcional) Celda 0 — Markdown: “Contexto + objetivo”
+## (Opcional) Contexto + objetivo
 - Qué predices (accidente sí/no), métrica elegida, y cómo vas a evitar leakage.
 
 ---
 
 ## A) AED (PDF literal)
 
-### ✅ Celda A1 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Realiza un AED sobre el conjunto de datos.`  
 **Texto sugerido (3–5 líneas):** qué miras: nulos, distribución del target, outliers, correlación.
 
-### ✅ Celda A2 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Estadísticos iniciales.`  
 **Código mínimo:** `df.describe(include='all')` + 3 hallazgos.
 
-### ✅ Celda A3 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Distribuciones de las variables numéricas del conjunto de datos.`  
 **Código mínimo:** histogramas/boxplots (si hay muchas, agrupa o muestra top-N).  
 **Evidencia:** 3–6 gráficos con título.
 
-### ✅ Celda A4 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Matriz de correlación.`  
 **Código mínimo:** heatmap.  
 **Decisión típica:** si |corr|>0.95 elimina una (mejor si conservas la interpretable).
@@ -459,37 +464,37 @@ Para aprobar sin complicaciones, divide la tarea en dos cuadernos claros. En el 
 
 ## B) Preprocesamiento (PDF literal)
 
-### ✅ Celda B1 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Realiza el preprocesamiento de datos de tu problema.`  
 **Texto:** enumera lo que harás: split + nulos + encoding + escalado + (PCA si aplica).
 
-### ✅ Celda B2 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Reserva un conjunto de datos para validación y otro para testeo.`  
 **Recomendación segura:** 70/15/15 (o 60/20/20) con estratificación si procede.  
 **Evidencia:** tamaños y proporciones.
 
-### ✅ Celda B3 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Columnas inútiles, valores sin sentido y atípicos.`  
 **Checklist:**
 - IDs / constantes / duplicadas → fuera.
 - valores imposibles → regla definida en train.
 - atípicos: si decides tratarlos, que sea con criterio (y deja evidencia).
 
-### ✅ Celda B4 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Tratamiento de valores nulos.`  
 **Regla:** imputación fit solo en train.  
 **Evidencia:** % nulos antes/después y objeto imputador.
 
-### ✅ Celda B5 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Análisis de variabilidad.`  
 **Acción típica:** eliminar varianza 0/casi 0 (con umbral + lista columnas).
 
-### ✅ Celda B6 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Columnas categóricas.`  
 **Acción típica:** OneHotEncoder.  
 **Línea roja práctica:** si revienta a miles de columnas, lo justificas y simplificas.
 
-### ✅ Celda B7 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Reducción de la dimensionalidad.`  
 **Tutoría práctica:** si hay muchas columnas, PCA(n_components=0.90 o 0.95).  
 **Extra:** PCA 2D solo para visualización si quieres.
@@ -498,7 +503,7 @@ Para aprobar sin complicaciones, divide la tarea en dos cuadernos claros. En el 
 
 ## C) Modelos (PDF literal) — obligatorio cumplir los 4
 
-### ✅ Celda C1 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Entrena y optimiza un modelo de KNN.`  
 - Código: `KNeighborsClassifier`  
 - Optimización: **GridSearchCV** (n_neighbors, weights, metric…)
@@ -507,7 +512,7 @@ Subceldas (títulos literales):
 - `Entrenar un KNN.`
 - `Optimizar el KNN con la técnica GridSearch.`
 
-### ✅ Celda C2 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Entrena y optimiza un modelo de DT.`  
 - Código: `DecisionTreeClassifier`  
 - Optimización: **RandomizedSearchCV** (max_depth, min_samples_split, min_samples_leaf, criterion…)
@@ -518,7 +523,7 @@ Subceldas (títulos literales):
 - `Optimizar el DT con la técnica RandomSearch.`
 - `Explicar el DT.`  ← (después) qué cambió y por qué
 
-### ✅ Celda C3 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Entrena y optimiza un modelo de SVM.`  
 - Código: `SVC(probability=True)` (si necesitas probas para ensembles)  
 - Optimización: **GridSearchCV** (C, gamma, kernel)
@@ -528,7 +533,7 @@ Subceldas (títulos literales):
 - `Optimizar el SVM con la técnica GridSearch.`  
 **Nota práctica:** puede tardar bastante; evita grids enormes.
 
-### ✅ Celda C4 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Entrena y optimiza un modelo de NL.`  
 **Como las tutorías no lo definen explícitamente, elige 1 y justifica:**
 - Opción A (muy defendible): `Perceptron` (neurona lineal)  
@@ -542,10 +547,10 @@ Subceldas (títulos literales):
 
 ## D) Ensembles (PDF literal)
 
-### ✅ Celda D1 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Crear modelos ensemble usando:`
 
-#### ✅ Celda D1.1 — Markdown (título literal)
+#### ✅ Titulo literal del enunciado
 `Los tres mejores modelos obtenidos, usando el siguiente criterio: media aritmética de todos los modelos que tengan una fiabilidad superior al 80%.`  
 **Implementación clara:**
 - Para cada modelo, calcula `predict_proba`.
@@ -553,7 +558,7 @@ Subceldas (títulos literales):
 - Media aritmética de probas seleccionadas → predicción final.
 - **Fallback** si ninguno cumple: usa el mejor modelo (lo documentas).
 
-#### ✅ Celda D1.2 — Markdown (título literal)
+#### ✅ Titulo literal del enunciado
 `Todos los modelos, usando como criterio un modelo de Regresión Lineal.`  
 **Implementación “a prueba de rúbrica”:**
 - Meta-features: probas de todos los modelos base en **validación**.
@@ -587,7 +592,7 @@ Celdas con títulos literales:
 
 ## C) Semisupervisado (PDF literal)
 
-### ✅ Celda C1 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Realiza un etiquetado automático.`  
 
 **Flujo recomendado (compatible con tutorías):**
@@ -607,7 +612,7 @@ Celdas con títulos literales:
 
 ## D) Supervisado (PDF literal) — 3 modelos obligatorios
 
-### ✅ Celda D1 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Entrena y optimiza distintos modelos supervisados.`  
 Subceldas con títulos literales:
 - `Modelo 1.`
@@ -634,7 +639,7 @@ No usar una capa lineal sin activación, ya que equivaldría a una regresión li
 
 ## E) Ensemble final (PDF literal)
 
-### ✅ Celda E1 — Markdown (título literal)
+### ✅ Titulo literal del enunciado
 `Crea un modelo ensemble y explica el criterio que utilizas.`
 Criterios defendibles:
 - voting soft con pesos por rendimiento en valid

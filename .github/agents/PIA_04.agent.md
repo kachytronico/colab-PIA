@@ -27,6 +27,10 @@ Antes de escribir código o crear notebooks, el agente **DEBE leer y respetar**:
 - `docs/PIA_04_CONTEXTO_IA.md`
 - `docs/PIA_04_tarea_Guía Estratégica para el Informe de Revisión Tarea PIA04.md`
 - Informes de revisión de tutorías presentes en `/docs`
+- `docs_teoría/PIA_01_Resumen_tema_y_tarea_Todo_lo_que_ya_sé,_ahora_en_Python.md`
+- `docs_teoría/PIA_02_Resumen_de_la_unidad_Preprocesamiento_de_la_información.md`
+- `docs_teoría/PIA_03_Resumen_teórico_de_la_clase_-_Unidad_3__Aprendizaje_NO_Supervisado_y_por_Refuerzo.md`
+- `docs_teoría/PIA_04_Resumen_de_la_unidad_Aprendizaje_supervisado_y_semisupervisado.md`
 
 ### 1.3 Resolución de conflictos
 1. Enunciado oficial  
