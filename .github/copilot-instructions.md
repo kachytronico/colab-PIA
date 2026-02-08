@@ -6,6 +6,4 @@
 - Antes de modificar una tarea, revisa la carpeta de su unidad.
 - Respeta rutas relativas y guías de estilo de cada unidad.
 
-## PIA04 - Solo Problema 2 (Fallos)
-Cuando la tarea sea P2, usa como guia principal .github/agents/PIA04_P2_FALLOS.agent.md y los documentos de docs/P2_Fallos/.
 

@@ -18,14 +18,15 @@ y aplicando las decisiones aclaradas en las tutorías.
 Antes de escribir código o crear notebooks, el agente **DEBE leer y respetar**:
 
 ### 1.1 Fuentes de verdad (prioridad máxima)
-- `docs/PIA_04_tarea_enunciado.md` ← **ENUNCIADO OFICIAL**
-- `docs/PIA04_Guia_Operativa_optima_v2.md`
+- `PIA_tarea_04/docs/PIA_04_tarea_enunciado.md` ← **ENUNCIADO OFICIAL**
+- `PIA_tarea_04/docs/PIA04_Guia_Operativa_optima_v2.md`
+- `PIA_tarea_04/docs/PIA04_Guia_Unificada_Estrategica_Operativa.md`
 
 ### 1.2 Fuentes de apoyo
-- `docs/PIA_04_GUIA_ESTILO.md`
-- `docs/PIA_04_PLAN_TRABAJO.md`
-- `docs/PIA_04_CONTEXTO_IA.md`
-- `docs/PIA_04_tarea_Guía Estratégica para el Informe de Revisión Tarea PIA04.md`
+- `PIA_tarea_04/docs/PIA_04_GUIA_ESTILO.md`
+- `PIA_tarea_04/docs/PIA_04_PLAN_TRABAJO.md`
+- `PIA_tarea_04/docs/PIA_04_CONTEXTO_IA.md`
+- `PIA_tarea_04/docs/PIA_04_tarea_Guía Estratégica para el Informe de Revisión Tarea PIA04.md`
 - Informes de revisión de tutorías presentes en `/docs`
 - `docs_teoría/PIA_01_Resumen_tema_y_tarea_Todo_lo_que_ya_sé,_ahora_en_Python.md`
 - `docs_teoría/PIA_02_Resumen_de_la_unidad_Preprocesamiento_de_la_información.md`
@@ -36,7 +37,8 @@ Antes de escribir código o crear notebooks, el agente **DEBE leer y respetar**:
 1. Enunciado oficial  
 2. Guía Operativa  
 3. Tutorías  
-4. Criterio técnico razonable (sin salir del enunciado)
+4. Guía Unificada
+5. Criterio técnico razonable (sin salir del enunciado)
 
 ---
 
